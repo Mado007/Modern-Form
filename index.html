@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/images/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Registration Form</title>
+</head>
+<section class=" container">
+  <form action="" method="get" class="form">
+    <h1>Registration Form</h1>
+    <label for="username">
+      Username:
+      <input type="text" id="username" minlength="3" required>
+      <ul class="inputRequirements">
+        <li id="lengthRequirement">At least 3 characters long</li>
+        <li id="charRequirement">Must only contain letters and numbers (no special characters)</li>
+      </ul>
+    </label>
+
+    <label for="email">
+      Email:
+      <input type="email" id="email" pattern="^[\w.-]{3,20}@([\w-]+\.)+[\w-]{2,4}$" required>
+      <ul class="inputRequirements">
+        <li id="emailRequirement">Valid email address</li>
+      </ul>
+    </label>
+
+    <div id="pwdWrap">
+      <label for="password">Password:</label>
+      <div class="password-container">
+        <input type="password" id="password" maxlength="100" minlength="8" required>
+        <i class="fa fa-eye-slash" aria-hidden="true"></i>
+      </div>
+    </div>
+    <ul class="inputRequirements">
+      <li id="lengthPasswordRequirement">At least 8 characters long (and less than 100 characters)</li>
+      <li id="uppercaseRequirement">Contains at least 1 uppercase letter</li>
+    </ul>
+
+    <label for="phoneNumber">
+      Phone number:
+      <input type="number" id="phoneNumber" required>
+      <ul class="inputRequirements">
+        <li id="lengthPhoneRequirement">Add your rest numbers so all be 14 numbers</li>
+        <li id="numRequirement">Only support (011, 012, 015) are allowed</li>
+      </ul>
+    </label>
+
+    <label for="sLanguages">Select your language:</label>
+    <div class="language-options">
+      <label for="lang1">
+        <input type="checkbox" id="lang1" name="lang1" value="English"> English
+      </label>
+      <label for="lang2">
+        <input type="checkbox" id="lang2" name="lang2" value="Arabic"> Arabic
+      </label>
+      <label for="lang3">
+        <input type="checkbox" id="lang3" name="lang3" value="Spanish"> Spanish
+      </label>
+    </div>
+
+    <label for="sGenders">Select your gender:</label>
+    <div class="gender-options">
+      <label for="gen1">
+        <input type="radio" id="gen1" name="gen" value="Male"> Male
+      </label>
+      <label for="gen2">
+        <input type="radio" id="gen2" name="gen" value="Female"> Female
+      </label>
+    </div>
+
+
+
+
+
+    <input type="submit" id="submit" name="submit" value=" Register">
+  </form>
+</section>
+
+<body>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

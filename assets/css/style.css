@@ -1,0 +1,334 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Background styling */
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../images/wallpaperflare.com_wallpaper.jpg") no-repeat center center fixed;
+  background-size: cover; 
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Centered Form Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+  margin: 0px;
+  border-radius: 15px;
+  position: relative;
+  background: linear-gradient(0deg, rgba(34, 192, 195, 0.793) 0%, rgba(142, 35, 108, 0.662) 100%);
+  transition: background 0.9s ease;
+}
+
+.container:hover {
+  background: linear-gradient(124deg, rgba(95, 90, 189, 1) 0%, rgba(202, 14, 42, 0.545) 28%, rgb(167, 42, 77) 100%);
+  transition: padding 0.9s ease;
+  padding: 15px;
+  cursor: default;
+  margin: 0;
+}
+
+/* Form styling */
+form {
+  background: rgba(229, 245, 245, 0.695); /* Slightly transparent white */
+  border-radius: 10px;
+  box-shadow: -2px 3px 15px 7px rgba(0, 0, 0, 0.2);
+  padding: 2px 30px;
+  width: 100%;
+  max-width: 900px; /* Ensure a good width */
+}
+
+form h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  color: #770486;
+  cursor: default;
+}
+
+/* Label and input fields */
+label {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  font-size: 1rem;
+  margin: 1px;
+  padding: 1px 0;
+  color: #422d81f0;
+}
+
+label input[type="text"],
+label input[type="email"],
+label input[type="password"],
+label input[type="number"] {
+  margin-top: 2%;
+  padding: 4px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Password section with eye icon */
+#pwdWrap {
+  display: flex;
+  flex-direction: column; 
+  gap: 2px;
+  align-items: flex-start; 
+  margin-top: 10px;
+}
+
+.password-container {
+  display: flex;
+  align-items: center; 
+  gap: 2px; 
+  width: 100%;
+}
+
+.password-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.password-container i {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #44337e;
+  font-size: 1.2rem;
+}
+
+/* Input requirements */
+.inputRequirements {
+  font-size: 0.85rem;
+  margin: 5px 0;
+  color: #3e480e;
+  padding-left: 10px;
+}
+.language-options,
+.gender-options {
+  display: flex; 
+  gap: 5px; 
+  align-items: left;
+  margin-top: 5px;
+}
+
+.language-options label,
+.gender-options label {
+  display: flex; 
+  align-items: right;
+  flex-direction: row-reverse;
+  font-size: 1rem;
+  gap: 10px;
+  color: #444444;
+  cursor: pointer;
+}
+/* Checkbox and radio buttons */
+.language-options input[type="checkbox"],
+.gender-options input[type="radio"] {
+  margin-right: 20px;
+}
+
+/* Submit button */
+#submit {
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  margin: 3px 0;
+  padding: 8px 1px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  transition: background 0.6s ease;
+}
+
+#submit:hover {
+  background: #073a8e;
+}
+.inputRequirements li {
+  list-style-type: none;
+  margin: 5px 0;
+}
+
+.inputRequirements li.valid {
+  color: rgb(14, 210, 14);
+}
+
+.inputRequirements li.valid::before {
+  content: "✔ ";
+  color: rgb(0, 199, 0);
+}
+
+.inputRequirements li.invalid {
+  color: rgb(197, 2, 2);
+}
+
+.inputRequirements li.invalid::before {
+  content: "✖ ";
+  color: rgbrgb(197, 2, 2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  body {
+    scroll-behavior: smooth;
+    overflow: visible;
+  }
+  .container {
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 700px;
+    padding: 15px;
+  }
+
+  form h1 {
+    font-size: 1.5rem;
+  }
+
+  .language-options,
+  .gender-options {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .language-options label,
+  .gender-options label {
+    font-size: 0.9rem;
+    gap: 5px;
+  }
+
+  .inputRequirements {
+    font-size: 0.8rem;
+  }
+
+  #submit {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    scroll-behavior: smooth;
+    overflow: visible;
+  }
+  form {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+  }
+
+  form h1 {
+    font-size: 1.3rem;
+  }
+
+  label input[type="text"],
+  label input[type="email"],
+  label input[type="password"],
+  label input[type="number"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .password-container input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .language-options,
+  .gender-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .language-options label,
+  .gender-options label {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  #submit {
+    font-size: 1rem;
+  }
+
+  .inputRequirements li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    scroll-behavior: smooth;
+    overflow: visible;
+  }
+  .container {
+    padding: 15px;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  form h1 {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  label input[type="text"],
+  label input[type="email"],
+  label input[type="password"],
+  label input[type="number"] {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .password-container input {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .language-options,
+  .gender-options {
+    flex-direction: column;
+  }
+
+  .language-options label,
+  .gender-options label {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  #submit {
+    font-size: 0.9rem;
+  }
+
+  .inputRequirements li {
+    font-size: 0.75rem;
+  }
+}
