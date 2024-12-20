@@ -54,51 +54,31 @@ emailInput.addEventListener("input", function () {
     emailRequirement.classList.remove("valid");
   }
 });
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-var passwordInput = document.getElementById("password");
-var lengthPasswordRequirement = document.getElementById("lengthPasswordRequirement");
-var uppercaseRequirement = document.getElementById("uppercaseRequirement");
+  var checkboxes = document.querySelectorAll(".language-options input[type='checkbox']");
+  var errorMessage = document.getElementById("languageError");
+  var selectedLanguages = 0;
 
-passwordInput.onkeyup = function () {
-  var validLength = passwordInput.value.length >= 8 && passwordInput.value.length <= 100;
-  var validUppercase = /[A-Z]/.test(passwordInput.value);
+  checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+          selectedLanguages++;
+      }
+  });
 
-  if (validLength) {
-    lengthPasswordRequirement.classList.add("valid");
-    lengthPasswordRequirement.classList.remove("invalid");
+  if (selectedLanguages < 2) {
+      errorMessage.textContent = "*You must select at least two languages.";
+      return;
   } else {
-    lengthPasswordRequirement.classList.add("invalid");
-    lengthPasswordRequirement.classList.remove("valid");
+      errorMessage.textContent = "";
   }
 
-  if (validUppercase) {
-    uppercaseRequirement.classList.add("valid");
-    uppercaseRequirement.classList.remove("invalid");
-  } else {
-    uppercaseRequirement.classList.add("invalid");
-    uppercaseRequirement.classList.remove("valid");
-  }
-};
-var phoneInput = document.getElementById("phoneNumber");
-var lengthPhoneRequirement = document.getElementById("lengthPhoneRequirement");
-var numRequirement = document.getElementById("numRequirement");
+  var username = document.getElementById("username").value;
 
-phoneInput.addEventListener("input", function () {
-  var phoneValue = phoneInput.value;
+  var personalizedMessage = document.getElementById("personalizedMessage");
+  personalizedMessage.textContent = `Hello, ${username}! Thank you for registering.`;
 
-  if (phoneValue.length === 14) {
-    lengthPhoneRequirement.classList.add("valid");
-    lengthPhoneRequirement.classList.remove("invalid");
-  } else {
-    lengthPhoneRequirement.classList.add("invalid");
-    lengthPhoneRequirement.classList.remove("valid");
-  }
-
-  if (/^(011|012|015)/.test(phoneValue)) {
-    numRequirement.classList.add("valid");
-    numRequirement.classList.remove("invalid");
-  } else {
-    numRequirement.classList.add("invalid");
-    numRequirement.classList.remove("valid");
-  }
+  document.querySelector(".form").style.display = "none";
+  document.getElementById("welcomeMessage").style.display = "block";
 });

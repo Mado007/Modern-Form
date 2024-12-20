@@ -60,6 +60,7 @@
     </label>
 
     <label for="sLanguages">Select your language:</label>
+    <div id="languageError" style="color: red; font-size: 0.9rem; margin-top: 5px;"></div>
     <div class="language-options">
       <label for="lang1">
         <input type="checkbox" id="lang1" name="lang1" value="English"> English
@@ -88,6 +89,10 @@
 
     <input type="submit" id="submit" name="submit" value=" Register">
   </form>
+  <div id="welcomeMessage">
+    <h2>Welcome!</h2>
+    <p id="personalizedMessage"></p>
+  </div>
 </section>
 
 <body>

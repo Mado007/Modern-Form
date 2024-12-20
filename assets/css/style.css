@@ -187,7 +187,24 @@ label input[type="number"] {
   content: "✖ ";
   color: rgbrgb(197, 2, 2);
 }
+#welcomeMessage {
+  font-family: 'Merriweather', serif;
+  color: #030219;
+  animation: fadeIn 1s ease-in-out;
+  display: none; 
+  align-items: center;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Responsive Design */
 @media (max-width: 1024px) {
   body {
