@@ -86,9 +86,10 @@ phoneInput.addEventListener("input", function () {
   var phoneValue = phoneInput.value;
 
   if (phoneValue.length > 11) {
-    phoneInput.value = phoneValue.substring(0, 11);
+    phoneInput.value = phoneValue.substring(0, 11); 
   }
 
+  // التحقق من طول الرقم (14 رقمًا)
   if (phoneValue.length === 11) {
     lengthPhoneRequirement.classList.add("valid");
     lengthPhoneRequirement.classList.remove("invalid");
@@ -106,6 +107,7 @@ phoneInput.addEventListener("input", function () {
   }
 });
 document.querySelector("form").addEventListener("submit", function (event) {
+  
   event.preventDefault();
 
   var genderSelected = document.querySelector('input[name="gen"]:checked');
@@ -117,7 +119,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
   } else {
     genderErrorMessage.textContent = "";
   }
-
+  
   var checkboxes = document.querySelectorAll(".language-options input[type='checkbox']");
   var errorMessage = document.getElementById("languageError");
   var selectedLanguages = 0;
