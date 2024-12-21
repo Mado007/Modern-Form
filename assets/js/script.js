@@ -85,6 +85,10 @@ var numRequirement = document.getElementById("numRequirement");
 phoneInput.addEventListener("input", function () {
   var phoneValue = phoneInput.value;
 
+  if (phoneValue.length > 11) {
+    phoneInput.value = phoneValue.substring(0, 11);
+  }
+
   if (phoneValue.length === 11) {
     lengthPhoneRequirement.classList.add("valid");
     lengthPhoneRequirement.classList.remove("invalid");
@@ -93,7 +97,7 @@ phoneInput.addEventListener("input", function () {
     lengthPhoneRequirement.classList.remove("valid");
   }
 
-  if (/^(011|012|015)/.test(phoneValue)) {
+  if (/^(010|011|012|015)/.test(phoneValue)) {
     numRequirement.classList.add("valid");
     numRequirement.classList.remove("invalid");
   } else {
@@ -103,7 +107,7 @@ phoneInput.addEventListener("input", function () {
 });
 document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
-  
+
   var genderSelected = document.querySelector('input[name="gen"]:checked');
   var genderErrorMessage = document.getElementById("genderError");
 
