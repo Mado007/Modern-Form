@@ -103,6 +103,16 @@ phoneInput.addEventListener("input", function () {
 });
 document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
+  
+  var genderSelected = document.querySelector('input[name="gen"]:checked');
+  var genderErrorMessage = document.getElementById("genderError");
+
+  if (!genderSelected) {
+    genderErrorMessage.textContent = "*You must select a gender.";
+    return;
+  } else {
+    genderErrorMessage.textContent = "";
+  }
 
   var checkboxes = document.querySelectorAll(".language-options input[type='checkbox']");
   var errorMessage = document.getElementById("languageError");
